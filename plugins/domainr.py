@@ -5,7 +5,7 @@ from util import hook, http
 def domainr(inp):
     """domainr <domain> - Use domain.nr's API to search for a domain, and similar domains."""
     try:
-        data = http.get_json('http://domai.nr/api/json/search?q=' + inp)
+        data = http.get_json('http://domai.nr/api/json/search?client_id=cloudbot&q=' + inp)
     except (http.URLError, http.HTTPError) as e:
         return "Unable to get data for some reason. Try again later."
     if data['query'] == "":
